@@ -1,3 +1,17 @@
+
+import java.util.ArrayList;
+import java.util.Date;
+
+import Cadena
+import Cadena de Montaje.MontajeBiplaza;
+import Cadena de Montaje.MontajeFurgoneta;
+import Cadena de Montaje.MontajeTurismo;
+import Cadena de Montaje.MontajeBiplaza;
+import Cadena de Montaje.MontajeFurgoneta;
+import Cadena de Montaje.MontajeTurismo;
+import Cadena de Montaje.MontajeFurgoneta;
+import Cadena de Montaje.MontajeTurismo;
+
 public class Scheduler {
     private int tiempoTotal;
     boolean totalCoches = false;
@@ -15,17 +29,28 @@ public class Scheduler {
         this.cadenaTurismo = cadenaTurismo;
     }
 
+    private void asignarOperariosAleatorios(Cadenamontaje cadena) {
+        ArrayList<Operario> ops = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            int experiencia = (int)(Math.random() * 20) + 1; //Experiencia aleatoria para cada uno
+            ops.add(new Operario("Operario"+i, "A", "1111","Direccion",1L, "Operario", 1000, new Date(), experiencia));
+        }
+        cadena.añadirOperario(ops);
+    }
     public void simulacionSimple() {
+        asignarOperariosAleatorios(cadenaBiplaza);
+        asignarOperariosAleatorios(cadenaTurismo);
+        asignarOperariosAleatorios(cadenaFurgoneta);
         while (tiempoTotal < 10) {
             tiempoTotal++;
             System.out.println("Tiempo total: " + tiempoTotal);
 
-            if(cadena != null) {
-                cadena.trabajoOperarios();
-            }
+            cadenaBiplaza.trabajoOperarios();
+            cadenaTurismo.trabajoOperarios();
+            cadenaFurgoneta.trabajoOperarios();
 
-            if(cadena.getFaseActual() > 4) {
-                System.out.println("Se ha terminado de fabricar un coche");
+            if(cadenaBiplaza.getFaseActual() > 3 && cadenaTurismo.getFaseActual() > 3 && cadenaFurgoneta.getFaseActual() > 3) {
+                System.out.println("Todos los vehiculos terminados.");
                 break;
             }
         }
