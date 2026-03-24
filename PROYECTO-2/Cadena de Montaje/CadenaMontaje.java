@@ -11,7 +11,7 @@ public class CadenaMontaje {
     private int tiempoTranscurrido = 0;
     private boolean disponibilidadVeh;
 
-    public CadenaMontaje(ArrayList<Operario> listaOperarios, int faseActual, int tiempoTranscurrido, boolean disponibilidadVeh) {
+    public CadenaMontaje(ArrayList<Operario>) {
         this.listaOperarios = listaOperarios;
         this.faseActual = 0;
         this.tiempoTranscurrido = 0;
