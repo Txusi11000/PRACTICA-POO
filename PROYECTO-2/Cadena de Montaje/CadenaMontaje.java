@@ -13,9 +13,9 @@ public class CadenaMontaje {
 
     public CadenaMontaje(ArrayList<Operario> listaOperarios, int faseActual, int tiempoTranscurrido, boolean disponibilidadVeh) {
         this.listaOperarios = listaOperarios;
-        this.faseActual = faseActual;
-        this.tiempoTranscurrido = tiempoTranscurrido;
-        this.disponibilidadVeh = disponibilidadVeh;
+        this.faseActual = 0;
+        this.tiempoTranscurrido = 0;
+        this.disponibilidadVeh = true;
     }
 
     public void avanzarFase() {
@@ -103,4 +103,4 @@ public class CadenaMontaje {
     public int getTiempoTranscurrido() {
          return tiempoTranscurrido; 
     }
-}
+}
