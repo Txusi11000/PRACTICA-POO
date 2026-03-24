@@ -80,19 +80,19 @@ public class AlmacenDatos implements InterfazAlmacen {
 
     public void listarStockMotores() {
         for(Motor mot : listaMotores) {
-            System.out.println("La referencia del motor es: " + mot.getReferencia);
+            System.out.println("La referencia del motor es: " + mot.getReferencia());
         }
     }
 
     public void listarStockTapiceria() {
         for (Tapiceria tap : listaTapiceria) {
-            System.out.println("La referencia de la tapiceria es: " + tap.getReferencia);
+            System.out.println("La referencia de la tapiceria es: " + tap.getReferencia());
         }
     }
 
     public void listarStockTrabajadores() {
         for (Trabajador tra : listaTrabajadores) {
-            System.out.println("El DNI del trabajador es: " + tra.getDNI);
+            System.out.println("El DNI del trabajador es: " + tra.getDNI());
         }
     }
 
