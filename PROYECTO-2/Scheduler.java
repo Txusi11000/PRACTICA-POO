@@ -1,14 +1,18 @@
 public class Scheduler {
     private int tiempoTotal;
     boolean totalCoches = false;
-    private CadenaMontaje cadena;
+    private MontajeBiplaza cadenaBiplaza;
+    private MontajeFurgoneta cadenaFurgoneta;
+    private MontajeTurismo cadenaTurismo;
 
     public Scheduler () {
         this.tiempoTotal = 0;
     }
 
-    public void asignarCadena(CadenaMontaje cadena) {
-        this.cadena = cadena;
+    public void asignarCadena(MontajeBiplaza cadenaBiplaza, MontajeTurismo cadenaTurismo, MontajeFurgoneta cadenaFurgoneta) {
+        this.cadenaBiplaza = cadenaBiplaza;
+        this.cadenaFurgoneta = cadenaFurgoneta;
+        this.cadenaTurismo = cadenaTurismo;
     }
 
     public void simulacionSimple() {
